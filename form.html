@@ -1,72 +1,127 @@
-<!DOCTYPE html>    
-<html>    
-<head>  
-    <link rel="stylesheet"  href="css/style.css" >
-    <title>Reg Form</title>    
-</head>    
-<body>    
-    <center><h1>Form Validation using HTML,CSS,JavaScript</h1></center>    
-    <hr>    
-    <form method="" action="" name="reg_form" onsubmit="return validate()">    
-        <h2>Registration Form</h2>    
-        <table>    
-            <tr>    
-                <td><label>First Name: </label></td>    
-                <td>    
-                    <input type="text" name="fname" placeholder="First Name">    
-                </td>    
-            </tr>    
-            <tr>    
-                <td><label>Last Name: </label></td>    
-                <td>    
-                    <input type="text" name="lname" placeholder="Last Name">    
-                </td>    
-            </tr>    
-            <tr>    
-                <td><label>Address: </label></td>    
-                <td>    
-                    <input type="textarea" size="50" name="address" placeholder="Address">    
-                </td>    
-            </tr>    
-            <tr>    
-                <td><label>Gender: </label></td>    
-                <td>    
-                    <input type="radio" name="gender" value="male">Male    
-                    <input type="radio" name="gender" value="femele">Female    
-                </td>    
-            </tr>    
-            <tr>    
-                <td><label>Email Id: </label></td>    
-                <td>    
-                    <input type="text" name="email" placeholder="example@gmail.com">    
-                </td>    
-            </tr>    
-            <tr>    
-                <td><label>Mobile: </label></td>    
-                <td>    
-                    <input type="number" name="mobile">    
-                </td>    
-            </tr>    
-            <tr>    
-            <td><label>Course: </label></td>    
-                <td>    
-                    <select name="course">    
-                        <option value="select course">select course</option>    
-                        <option value="HTML">HTML</option>    
-                        <option value="CSS">CSS</option>    
-                        <option value="JavaScript">JAVASCRIPT</option>    
-                        <option value="Java">JAVA</option>    
-                    </select>    
-                </td>    
-            </tr>    
-            <tr>    
-                <td>    
-                    <input type="submit" name="submit" value="Submit">    
-                    <input type="reset" name="reset" value="Reset">    
-                </td>    
-            </tr>             
-        </table>    
-    </form>    
-</body>    
-</html>     
-Output
+<!DOCTYPE html>
+<!-- JSFormValidation.html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Form Validation Using JavaScript</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/form.js"></script>
+  </head>
+  <body>
+  <center>
+  <div class="formBox">
+  <h2>JavaScript Form Validation</h2>
+    <form  class="form" id="formTest" method="get" action="processData">
+      <table>
+        <tr>
+          <td>
+            <label for="txtName">Name <span class="required">*</span>
+            </label>
+          </td>
+          <td>
+            <input type="text" id="txtName" name="name">
+          </td>
+          <td id="elmNameError" class="errorMsg">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>
+            <label for="txtAddress">Address</label>
+          </td>
+          <td>
+            <input type="text" id="txtAddress" name="address">
+          </td>
+          <td id="elmAddressError" class="errorMsg">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>
+            <label for="txtZipcode">Zip Code <span class="required">*</span>
+            </label>
+          </td>
+          <td>
+            <input type="text" id="txtZipcode" name="zipcode">
+          </td>
+          <td id="elmZipcodeError" class="errorMsg">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Country<span class="required">*</span>
+          </td>
+          <td>
+            <select id="selCountry" name="country">
+              <option value="" selected>Please select...</option>
+              <option value="Australia">Australia</option>
+              <option value="Bombay">Bombay</option>
+              <option value="Canada">Canada</option>
+            </select>
+          </td>
+          <td id="elmCountryError" class="errorMsg">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Gender <span class="required">*</span>
+          </td>
+          <td>
+            <label>
+              <input type="radio" name="gender" value="m">Male </label>
+            <label>
+              <input type="radio" name="gender" value="f">Female </label>
+            <td id="elmGenderError" class="errorMsg">&nbsp;</td>
+          </td>
+        <tr>
+      <td>Languages<span class="required">*</span></td>
+      <td><label><input type="checkbox" name="language" value="E">English</label>
+          <label><input type="checkbox" name="languge" value="M">Malyalam</label>
+          <label><input type="checkbox" name="languge" value="T">Tamil</label></td>
+      <td id="elmLanError" class="errorMsg">&nbsp;</td></tr>
+        <tr>
+          <td>
+            <label for="txtPhone">Phone <span class="required">*</span>
+            </label>
+          </td>
+          <td>
+            <input type="text" id="txtPhone" name="phone">
+          </td>
+          <td id="elmPhoneError" class="errorMsg">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>
+            <label for="txtEmail">Email <span class="required">*</span>
+            </label>
+          </td>
+          <td>
+            <input type="text" id="txtEmail" name="email">
+          </td>
+          <td id="elmEmailError" class="errorMsg">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>
+            <label for="txtPassword">Password (6-8 characters) <span class="required">*</span>
+            </label>
+          </td>
+          <td>
+            <input type="password" id="txtPassword" name="password">
+          </td>
+          <td id="elmPasswordError" class="errorMsg">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>
+            <label for="txtPWVerified">Verify Password <span class="required">*</span>
+            </label>
+          </td>
+          <td>
+            <input type="password" id="txtPWVerified" name="pwVerified">
+          </td>
+          <td id="elmPWVerifiedError" class="errorMsg">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+            <input type="submit" value="Submit" id="btnSubmit">&nbsp; 
+          <input type="reset" value="Reset" id="btnReset">
+          </td>
+          <td>&nbsp;</td>
+        </tr>
+   </center>
+      </table>
+   </form>
+  </div>
+  </body>
+</html>
