@@ -10,8 +10,8 @@ function init() {
 function validateForm(theForm) {
    with(theForm) {
     return (isNotEmpty(txtName, "Please enter your name!", elmNameError)
-           && isNumeric(txtZipcode, "Please enter a 5-digit zip code!", elmZipcodeError)
-           && isLengthMinMax(txtZipcode, 5, 5, "Please enter a 5-digit zip code!", elmZipcodeError)
+           && isNumeric(txtZipcode, "Please enter a 6-digit zip code!", elmZipcodeError)
+           && isLengthMinMax(txtZipcode, 6, 6, "Please enter a 6-digit zip code!", elmZipcodeError)
            && isSelected(selCountry, "Please make a selection!", elmCountryError)
            && isChecked("gender", "Please check a gender!", elmGenderError)
            && isChecked("color", "Please check a color!", elmColorError)
